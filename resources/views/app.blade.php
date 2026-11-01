@@ -22,13 +22,17 @@
         {{-- Inline style to set the HTML background color based on our theme in app.css --}}
         <style>
             html {
-                background-color: oklch(1 0 0);
+                background-color: #f4f1ea;
             }
 
             html.dark {
-                background-color: oklch(0.145 0 0);
+                background-color: #141210;
             }
         </style>
+
+        <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+        <meta name="description" content="Reserva cortes, color, uñas y cuidado personal con profesionales de Popayán. Disponibilidad real, sin llamadas.">
 
         <link rel="icon" href="/favicon.ico" sizes="any">
         <link rel="icon" href="/favicon.svg" type="image/svg+xml">

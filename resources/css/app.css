@@ -7,11 +7,37 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * TurnoYa design tokens — contrato cerrado.
+ *
+ * Papel cálido #FAF8F5 · Carbón mate #121214 · Dorado #C59B27 · Verde #16A34A.
+ * Reglas:
+ *  - Dorado = marca y acción principal. Relleno con texto carbón (7.2:1).
+ *  - Verde  = disponibilidad, éxito y ruta. Relleno #15803D con blanco (5:1).
+ *  - Texto dorado pequeño usa --color-gold-deep (#8A6A10) para pasar AA.
+ *  - Una sola escala de radios: tarjetas 20px, inputs 14px, botones pill.
+ */
 @theme {
     --font-sans:
         'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
         'Noto Color Emoji';
+
+    --font-display:
+        'Archivo', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+
+    --color-cal: #faf8f5;
+    --color-cal-deep: #f1ede5;
+    --color-ink: #121214;
+    --color-ink-soft: #24242a;
+    --color-ceniza: #6b6862;
+    --color-arena: #e9e3d8;
+    --color-gold: #c59b27;
+    --color-gold-deep: #8a6a10;
+    --color-gold-soft: #f4e9c9;
+    --color-green: #16a34a;
+    --color-green-deep: #15803d;
+    --color-green-soft: #dcfce7;
 
     --radius-lg: var(--radius);
     --radius-md: calc(var(--radius) - 2px);
@@ -19,38 +45,28 @@
 
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-
     --color-card: var(--card);
     --color-card-foreground: var(--card-foreground);
-
     --color-popover: var(--popover);
     --color-popover-foreground: var(--popover-foreground);
-
     --color-primary: var(--primary);
     --color-primary-foreground: var(--primary-foreground);
-
     --color-secondary: var(--secondary);
     --color-secondary-foreground: var(--secondary-foreground);
-
     --color-muted: var(--muted);
     --color-muted-foreground: var(--muted-foreground);
-
     --color-accent: var(--accent);
     --color-accent-foreground: var(--accent-foreground);
-
     --color-destructive: var(--destructive);
     --color-destructive-foreground: var(--destructive-foreground);
-
     --color-border: var(--border);
     --color-input: var(--input);
     --color-ring: var(--ring);
-
     --color-chart-1: var(--chart-1);
     --color-chart-2: var(--chart-2);
     --color-chart-3: var(--chart-3);
     --color-chart-4: var(--chart-4);
     --color-chart-5: var(--chart-5);
-
     --color-sidebar: var(--sidebar);
     --color-sidebar-foreground: var(--sidebar-foreground);
     --color-sidebar-primary: var(--sidebar-primary);
@@ -62,74 +78,76 @@
 }
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --destructive-foreground: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.87 0 0);
-    --chart-1: oklch(0.646 0.222 41.116);
-    --chart-2: oklch(0.6 0.118 184.704);
-    --chart-3: oklch(0.398 0.07 227.392);
-    --chart-4: oklch(0.828 0.189 84.429);
-    --chart-5: oklch(0.769 0.188 70.08);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.87 0 0);
+    --background: #faf8f5;
+    --foreground: #121214;
+    --card: #ffffff;
+    --card-foreground: #121214;
+    --popover: #ffffff;
+    --popover-foreground: #121214;
+    --primary: #121214;
+    --primary-foreground: #faf8f5;
+    --secondary: #f1ede5;
+    --secondary-foreground: #121214;
+    --muted: #f1ede5;
+    --muted-foreground: #6b6862;
+    --accent: #c59b27;
+    --accent-foreground: #121214;
+    --destructive: #b91c1c;
+    --destructive-foreground: #ffffff;
+    --border: #e7e2d8;
+    --input: #ddd7cb;
+    --ring: #c59b27;
+    --chart-1: #c59b27;
+    --chart-2: #15803d;
+    --chart-3: #121214;
+    --chart-4: #8a6a10;
+    --chart-5: #6b6862;
+    --radius: 0.875rem;
+
+    --sidebar: #ffffff;
+    --sidebar-foreground: #121214;
+    --sidebar-primary: #121214;
+    --sidebar-primary-foreground: #faf8f5;
+    --sidebar-accent: #f1ede5;
+    --sidebar-accent-foreground: #121214;
+    --sidebar-border: #e7e2d8;
+    --sidebar-ring: #c59b27;
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.145 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.145 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.985 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.396 0.141 25.723);
-    --destructive-foreground: oklch(0.637 0.237 25.331);
-    --border: oklch(0.269 0 0);
-    --input: oklch(0.269 0 0);
-    --ring: oklch(0.439 0 0);
-    --chart-1: oklch(0.488 0.243 264.376);
-    --chart-2: oklch(0.696 0.17 162.48);
-    --chart-3: oklch(0.769 0.188 70.08);
-    --chart-4: oklch(0.627 0.265 303.9);
-    --chart-5: oklch(0.645 0.246 16.439);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.985 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(0.269 0 0);
-    --sidebar-ring: oklch(0.439 0 0);
+    --background: #121214;
+    --foreground: #f5f2ec;
+    --card: #1a1a1d;
+    --card-foreground: #f5f2ec;
+    --popover: #1a1a1d;
+    --popover-foreground: #f5f2ec;
+    --primary: #f5f2ec;
+    --primary-foreground: #121214;
+    --secondary: #232327;
+    --secondary-foreground: #f5f2ec;
+    --muted: #232327;
+    --muted-foreground: #a5a19a;
+    --accent: #d9b44a;
+    --accent-foreground: #121214;
+    --destructive: #ef4444;
+    --destructive-foreground: #121214;
+    --border: #2c2c31;
+    --input: #38383e;
+    --ring: #d9b44a;
+    --chart-1: #d9b44a;
+    --chart-2: #22c55e;
+    --chart-3: #f5f2ec;
+    --chart-4: #c59b27;
+    --chart-5: #6b6862;
+
+    --sidebar: #1a1a1d;
+    --sidebar-foreground: #f5f2ec;
+    --sidebar-primary: #f5f2ec;
+    --sidebar-primary-foreground: #121214;
+    --sidebar-accent: #232327;
+    --sidebar-accent-foreground: #f5f2ec;
+    --sidebar-border: #2c2c31;
+    --sidebar-ring: #d9b44a;
 }
 
 @layer base {
@@ -137,7 +155,64 @@
         @apply border-border;
     }
 
+    html {
+        scroll-behavior: smooth;
+        -webkit-tap-highlight-color: transparent;
+    }
+
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-foreground antialiased;
+        font-feature-settings: 'ss01' on, 'cv01' on;
+    }
+
+    h1,
+    h2,
+    h3 {
+        @apply font-display;
+        letter-spacing: -0.03em;
+    }
+
+    ::selection {
+        background: #c59b27;
+        color: #121214;
+    }
+
+    :focus-visible {
+        outline: 2px solid #c59b27;
+        outline-offset: 3px;
+    }
+
+    .tnum {
+        font-variant-numeric: tabular-nums;
+    }
+}
+
+@layer utilities {
+    .display-tight {
+        letter-spacing: -0.045em;
+        line-height: 1.02;
+    }
+
+    /* Safe area for the fixed bottom navigation on iOS. */
+    .pb-nav {
+        padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+    }
+
+    .pb-nav-desktop {
+        padding-bottom: 2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
     }
 }

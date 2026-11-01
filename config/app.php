@@ -29,6 +29,12 @@ return [
     'env' => env('APP_ENV', 'production'),
 
     /*
+    | Demo mode exposes role switching and the three simulators. It is only
+    | enabled locally and must never be true in production.
+    */
+    'demo_mode' => env('APP_DEMO_MODE', env('APP_ENV', 'production') === 'local'),
+
+    /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
     |--------------------------------------------------------------------------
@@ -65,7 +71,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('APP_TIMEZONE', 'UTC'),
 
     /*
     |--------------------------------------------------------------------------
