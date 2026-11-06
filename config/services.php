@@ -2,6 +2,21 @@
 
 return [
 
+    'google' => [
+        // Browser key is restricted by HTTP referrer and shipped through Inertia.
+        'maps_browser_key' => env('GOOGLE_MAPS_BROWSER_KEY'),
+        // Never exposed to the client: geocoding, places details, routes.
+        'maps_server_key' => env('GOOGLE_MAPS_SERVER_KEY'),
+    ],
+
+    'wompi' => [
+        'env' => env('WOMPI_ENV', 'sandbox'),
+        'public_key' => env('WOMPI_PUBLIC_KEY'),
+        'private_key' => env('WOMPI_PRIVATE_KEY'),
+        'integrity_secret' => env('WOMPI_INTEGRITY_SECRET'),
+        'events_secret' => env('WOMPI_EVENTS_SECRET'),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Third Party Services
