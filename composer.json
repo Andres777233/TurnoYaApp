@@ -1,11 +1,14 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/react-starter-kit",
+    "name": "andresvolveras/turnoya",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "Booking marketplace for barbershops and beauty studios in Popayan, Colombia.",
     "keywords": [
         "laravel",
-        "framework"
+        "inertia",
+        "react",
+        "bookings",
+        "marketplace"
     ],
     "license": "MIT",
     "require": {

@@ -25,7 +25,7 @@ shadcn/Radix + Motion**, with **PostgreSQL 18** and **Redis**.
 | Customer area: my bookings, account hub, appointment detail | ✅ |
 | Payments (Wompi), reminders, vacancy alerts, reviews, tips, business panel | ⏳ next phases |
 
-**58 tests / 225 assertions passing** (`php artisan test`).
+Suite de pruebas con PHPUnit para reservas, permisos y búsqueda (`php artisan test`).
 
 ## Local setup (already provisioned on this machine)
 
@@ -61,9 +61,10 @@ The seeder refuses to run when `APP_ENV=production`.
 
 | Role | Email | Password |
 |---|---|---|
-| Owner / barber | `dueno.casa-barberia@turnoya.demo` | `password` |
-| Owner / colorist | `dueno.salon-malva@turnoya.demo` | `password` |
-| Owner / nail artist | `dueno.estudio-nube@turnoya.demo` | `password` |
+| Owner / barber | `dueno.barbero@turnoya.demo` | `password` |
+| Owner / manager | `dueno.admin@turnoya.demo` | `password` |
+| Owner / colorist | `dueno.malva@turnoya.demo` | `password` |
+| Owner / nail artist | `dueno.nube@turnoya.demo` | `password` |
 
 ## Useful commands
 
