@@ -1,0 +1,17 @@
+﻿import { chromium } from '@playwright/test';
+const browser = await chromium.launch();
+const ctx = await browser.newContext({ viewport: { width: 1280, height: 1000 } });
+const page = await ctx.newPage();
+const errors = [];
+page.on('pageerror', e => errors.push(e.message));
+await page.goto('http://127.0.0.1:8000/', { waitUntil: 'networkidle' });
+const cookie = (await ctx.cookies()).find(c => c.name === 'XSRF-TOKEN');
+const headers = { 'X-XSRF-TOKEN': decodeURIComponent(cookie.value) };
+await ctx.request.post('http://127.0.0.1:8000/_demo/rol', { headers, form: { role: 'cliente' } });
+await ctx.request.post('http://127.0.0.1:8000/_demo/recordatorio', { headers });
+await page.goto('http://127.0.0.1:8000/turnos', { waitUntil: 'networkidle' });
+await page.screenshot({ path: 'storage/app/qa3-turnos.png', fullPage: false });
+const hasReminder = await page.getByText('Sí, allá estaré').count();
+const hasFav = await page.getByText('Mis reservas').count();
+console.log('url:', page.url(), 'reminder:', hasReminder, 'misreservas:', hasFav, 'errors:', errors.length ? errors.join('|') : 'none');
+await browser.close();
